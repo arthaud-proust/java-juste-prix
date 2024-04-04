@@ -1,10 +1,10 @@
-import GameInterfaces.ConsoleGameInterface;
 import GameInterfaces.GameInterface;
+import GameInterfaces.GuiGameInterface;
 
 import java.util.Random;
 
 public class Main {
-    private static final GameInterface gameInterface = new ConsoleGameInterface();
+    private static final GameInterface gameInterface = new GuiGameInterface();
 
     private static final int maxPrice = 1000;
     private static final int triesCount = 10;
