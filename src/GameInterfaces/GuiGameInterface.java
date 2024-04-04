@@ -21,7 +21,12 @@ public class GuiGameInterface implements GameInterface {
     public int askGuessPrice(int maxPrice) {
         String input = JOptionPane.showInputDialog(frame, "Donnez un nombre entre 0 et " + maxPrice + ": ");
 
-        return Integer.parseInt(input);
+        try {
+            return Integer.parseInt(input);
+        } catch (java.lang.NumberFormatException e) {
+            JOptionPane.showMessageDialog(frame, "Hé ho, il faut un nombre !");
+            return askGuessPrice(maxPrice);
+        }
     }
 
     @Override

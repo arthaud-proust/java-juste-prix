@@ -22,13 +22,19 @@ public class ConsoleGameInterface implements GameInterface {
     public int askGuessPrice(int maxPrice) {
         System.out.print("Donnez un nombre entre 0 et " + maxPrice + ": ");
 
-        int input = 0;
+        String input = null;
         try {
-            input = Integer.parseInt(bufferedReader.readLine());
+            input = bufferedReader.readLine();
         } catch (IOException e) {
-            input = 0;
+            input = "0";
         }
-        return input;
+
+        try {
+            return Integer.parseInt(input);
+        } catch (java.lang.NumberFormatException e) {
+            System.out.println("Hé ho, il faut un nombre !");
+            return askGuessPrice(maxPrice);
+        }
     }
 
     @Override
