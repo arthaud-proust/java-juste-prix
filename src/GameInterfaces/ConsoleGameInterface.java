@@ -9,8 +9,7 @@ public class ConsoleGameInterface implements GameInterface {
 
     @Override
     public void showIntro(int triesCount) {
-        System.out.println("Bienvenue au juste prix !");
-        System.out.println("Votre but ? Deviner le prix de cet objet en moins de " + triesCount + " essais !");
+        System.out.println("Bienvenue au juste prix !\nVotre but ? Deviner le prix de cet objet en moins de " + triesCount + " essais !");
     }
 
     @Override
@@ -22,7 +21,7 @@ public class ConsoleGameInterface implements GameInterface {
     public int askGuessPrice(int maxPrice) {
         System.out.print("Donnez un nombre entre 0 et " + maxPrice + ": ");
 
-        String input = null;
+        String input;
         try {
             input = bufferedReader.readLine();
         } catch (IOException e) {

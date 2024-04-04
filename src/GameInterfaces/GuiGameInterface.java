@@ -7,9 +7,7 @@ public class GuiGameInterface implements GameInterface {
 
     @Override
     public void showIntro(int triesCount) {
-
-        JOptionPane.showMessageDialog(frame, "Bienvenue au juste prix !");
-        JOptionPane.showMessageDialog(frame, "Votre but ? Deviner le prix de cet objet en moins de " + triesCount + " essais !");
+        JOptionPane.showMessageDialog(frame, "Bienvenue au juste prix !\nVotre but ? Deviner le prix de cet objet en moins de " + triesCount + " essais !");
     }
 
     @Override
